@@ -1,54 +1,54 @@
-# Resident Evil Village — RE8Display v2.7.0
+# Resident Evil Village — RE8Display v2.7.2
 
-**The original cursor returns. Display handling becomes more adaptable. Configuration becomes easier.**
+**Cinematics without distortion. Transitions that fit. The original cursor where it belongs.**
 
-RE8Display is an independent [REFramework](https://github.com/praydog/REFramework) plugin for **Resident Evil Village** on Windows. It improves aspect ratio handling, camera field of view, proportional interface scaling, and cursor behavior while keeping its configuration separate from the framework host.
+**RE8Display** is an independent [REFramework](https://github.com/praydog/REFramework) display plugin for **Resident Evil Village** on Windows. It improves aspect-ratio presentation, field of view, proportional interface scaling, and native cursor behavior, with its own settings menu and configuration.
 
-Version **2.7.0** focuses on a more natural interaction with the game: the original cursor is restored, unnecessary patch updates are reduced, and the settings menu provides clearer control over your experience.
+The **v2.7.2** update focuses on **pre-recorded video framing, full-screen transitions, and interaction-prompt proportions**, while retaining the cursor, camera, and interface improvements established in earlier releases.
 
-**[Downloads and releases](https://github.com/XssentialPilar/Resident-Evil-8-Village-Aspect-Ratio-Patch-/releases)** · **[Installation guide](ReadMe%20v2.7.0_%28General%29.txt)** · **[Validation and scope](docs/audit-2.7.0.md)**
-
-## What's New in 2.7.0
-
-### Original Game Cursor, Restored
-
-The game's original cursor and visual effects are **enabled by default**. Its displayed position now follows the absolute Windows mouse position, addressing the offset observed in earlier builds while preserving its proportions and appearance.
-
-The correction maps client coordinates to the actual rendered output and uses a dedicated cursor canvas to avoid applying interface scaling twice. Native clicks and game actions remain in place. If you prefer the Windows pointer alone, you can select that behavior in the settings menu.
-
-### Less Repeated Work
-
-Camera and interface properties are updated when their values differ, and shared interface roots receive fewer repeated adjustments. Configuration changes are saved in the background after a short pause in editing, reducing disk activity while moving sliders.
-
-These changes reduce the patch's own overhead. They are not a promise of a particular FPS increase or the elimination of stuttering from the game, drivers, or other mods.
-
-### Clearer Settings and a Complete Reset
-
-The ImGui menu groups related options into sections and provides a full-width FOV slider, cursor controls, and display information. Its bounded, scrollable layout keeps settings accessible on smaller outputs.
-
-**Restore All Defaults** resets every patch option, including automatic FOV handling, cursor mode, and the default menu shortcut. You can experiment with settings and return to the original configuration in one step.
-
-### Improved Display Detection
-
-The patch uses the actual DXGI backbuffer dimensions when available, with a swap-chain descriptor fallback. Monitor dimensions are reported separately so that monitor mode and rendering resolution are not treated as interchangeable.
-
-Resolution, window, display, device-reset, and DPI changes trigger a refresh. During steady operation, detection is polled at a limited rate to avoid unnecessary work.
+**[Downloads and releases](https://github.com/XssentialPilar/Resident-Evil-8-Village-Aspect-Ratio-Patch-/releases)** · **[Installation notes](START-HERE.md)** · **[Current validation and scope](docs/RE8Display-2.7.2-media-r2.md)**
 
 ## In-Game Overview
 
-<img width="2400" height="1800" alt="RE8Display-2 7 0-overview" src="https://github.com/user-attachments/assets/039c3cc9-1b12-444b-b03a-2f5cf54cd3b8" />
+<img width="1448" height="1086" alt="RE8Display-2 7 2-overview" src="https://github.com/user-attachments/assets/a4dc4c66-4b05-491e-ae06-3a5a80ddc139" />
 
-*Original gameplay screenshots arranged into a release overview. The captions highlight this version's main changes.*
 
-## Core Features
+*Promotional overview composed from Resident Evil Village imagery. The artwork illustrates the features; it is not a substitute for the runtime tests described below.*
 
-- **Automatic aspect ratio and FOV adjustment:** Corrections are calculated from the active output dimensions rather than a fixed list of resolutions. Automatic FOV handling preserves native camera and aiming changes.
-- **Proportional interface scaling:** Screen-space interface roots use uniform resolution adjustment, helping preserve the proportions of their contents.
-- **Targeted menu cursor handling:** Exact menu identifiers and typed GUI drivers cover supported interfaces, including the Duke's shop, inventory, map, and typewriter save lists. HUD and autosave notifications do not independently enable the menu pointer.
-- **Independent controls:** Display correction and cursor control can be enabled or disabled separately.
-- **Private configuration:** Settings are stored in `reframework/data/RE8Display.ini`, with an independent, rebindable menu shortcut.
+## What's New in v2.7.2
 
-**Map controls remain the game's original controls.** This release does not add a separate map-dragging system.
+### Proportional Cinematics and Pre-Recorded Videos
+
+Videos can now follow the display without being stretched horizontally or vertically. The corrected in-game video handling was observed with the **RE Engine logo and opening movie** at **1920 × 1200 (16:10)**.
+
+Choose the presentation you prefer:
+
+- **Fill the screen (default):** Preserves proportions while cropping the outer edges when needed.
+- **Keep complete video image (with bars):** Preserves every part of the picture, with bars when the source and display have different shapes.
+
+The video-framing setting is enabled by default. Playback timing and audio are left to the game.
+
+### Adaptive Full-Screen Transitions
+
+Recognized full-screen transition backgrounds now adapt automatically to the output, reducing incomplete coverage when the display shape changes. This adjustment operates independently of the video-framing option; there is no additional transition switch to configure.
+
+### Better-Proportioned Interaction Prompts
+
+The patch now corrects a recognized vertical-scaling mismatch affecting certain on-screen interaction indicators. In the tested RE8 session, the prompt returned to proportional sizing **without shifting its position or overriding unrelated native animation changes**.
+
+### Less Unnecessary Work
+
+Small internal refinements avoid redundant interface updates and calls. They reduce work performed by the patch itself; **no specific FPS, VRAM, or loading-time improvement is promised**.
+
+## Established Features, Still Included
+
+- **Original game cursor and effects:** Enabled by default, with improved synchronization to the Windows mouse. A Windows cursor-only option remains available.
+- **Aspect-ratio and camera handling:** Uses active output dimensions and maintains the native camera's automatic FOV behavior. A manual FOV override is available separately.
+- **Proportional interface scaling:** Uniform adjustments help menus, HUD elements, and inventory screens retain their intended proportions.
+- **Targeted menu interaction:** Cursor handling covers supported native interfaces such as inventory, the Duke's shop, map, and typewriter save menus.
+- **Independent configuration:** A scrollable settings menu, rebindable shortcut, background saving, and **Restore All Defaults** are retained from previous versions.
+
+**Map controls remain native to the game.** RE8Display does not introduce a separate map-dragging system.
 
 ## Requirements
 
@@ -56,22 +56,24 @@ Resolution, window, display, device-reset, and DPI changes trigger a refresh. Du
 | --- | --- |
 | Game | Resident Evil Village for Windows |
 | Architecture | Windows x64 |
-| Framework | A compatible, unmodified REFramework host with **plugin API 1.15 or newer**, included in the main ZIP |
-| Main package | `RE8Display-2.7.0.zip` |
+| Framework | REFramework with plugin API **1.15 or newer** — **included in the main v2.7.2 ZIP** |
+| Main package | `RE8Display-2.7.2.zip` |
 
-The main download includes the compatible REFramework build used during this version's gameplay tests. Its source revision is `1813bf34f720cfed51c0e8f40fc90ed1459a3c6b`. You can find framework updates in the official [REFramework nightly releases](https://github.com/praydog/REFramework-nightly/releases); if you replace the included host, please verify plugin API compatibility.
+**The main download includes the compatible REFramework loader (`dinput8.dll`) required by RE8Display.** You do not need a separate REFramework download for this bundle. If you later install a different host version, verify plugin API compatibility. Official framework updates are available from [REFramework](https://github.com/praydog/REFramework) and its [nightly releases](https://github.com/praydog/REFramework-nightly/releases).
 
 ## Installation and Upgrading
 
-1. **Close the game normally.** If upgrading, back up your existing `dinput8.dll`, RE8Display plugin, and private configuration.
-2. Download the main **`RE8Display-2.7.0.zip`** package. It includes the required compatible REFramework host.
-3. Extract **`RE8Display-2.7.0.zip`** into the game directory containing `re8.exe`. Allow the `reframework` folders to merge.
-4. Launch the game and press **`;`** to open **RE8Display Settings**.
+1. **Close Resident Evil Village.** If upgrading, back up the existing `dinput8.dll`, `reframework/plugins/RE8Display.dll`, and `reframework/data/RE8Display.ini` where present.
+2. Download the main **`RE8Display-2.7.2.zip`**, which includes both the compatible REFramework host and the display patch.
+3. Extract the contents into the game directory containing **`re8.exe`**. Keep the archive's directory structure and allow the `reframework` folders to merge. Back up any existing `dinput8.dll` before replacing it.
+4. To retain your preferences, preserve the existing `RE8Display.ini` instead of replacing it with the packaged defaults.
+5. Launch Village and press **`;`** (or your configured shortcut) to open the independent **RE8Display Settings** menu.
 
-The main archive includes the REFramework loader and the patch files:
+The expected installation layout is:
 
 ```text
-Game directory/
+Resident Evil Village/
+├── re8.exe
 ├── dinput8.dll
 └── reframework/
     ├── plugins/
@@ -81,117 +83,92 @@ Game directory/
         └── RE8Display.ini
 ```
 
-**A separate REFramework download is not required for this bundle.** Place `dinput8.dll` beside `re8.exe` and merge the `reframework` folder with the existing one. If Windows asks to replace an existing loader, preserve your backup before proceeding. The archive does not supply shared framework settings or game saves.
+The bundle does not replace game saves or Windows DirectX system files. The optional Agility and DirectStorage modules are separate downloads and are **not required**.
 
-When preserving personal settings, keep your existing `RE8Display.ini` instead of replacing it with the packaged defaults. New options use their built-in defaults when absent from an older configuration.
-
-### Upgrading from an Older Bundled Patch
-
-If your previous patch included a modified or bundled framework host, use that patch's original uninstaller first and retain its backups. Then install or restore a compatible, unmodified REFramework host before adding RE8Display 2.7.0.
-
-Disable REFramework's separate Graphics ultrawide correction and any other mod that writes to the same camera or interface properties. Competing corrections can produce inconsistent results.
+**Important:** Use only one installed RE8Display revision. Disable REFramework's separate ultrawide correction and any other mod making competing camera or interface adjustments if you encounter conflicting results.
 
 ## Settings at a Glance
 
 | Setting | Purpose |
 | --- | --- |
-| **Use original game cursor and effects** | Enabled by default; disable it to use the Windows pointer alone. |
-| **Cursor control in game menus** | Enables the patch's menu cursor handling. |
-| **Enable display correction** | Controls aspect ratio, camera, and interface corrections. |
-| **Override FOV** | Enables an optional horizontal FOV setting from 40° to 120°, referenced to the 16:9 base and adapted to the active aspect ratio. Automatic handling is the default. |
-| **Use vertical FOV** | Selects the vertical FOV axis for the corrected camera. |
-| **Proportional game interface** | Enables uniform interface adjustment. |
-| **Change menu key** | Rebinds the patch's independent shortcut. The default is the `;` character for the active keyboard layout. |
-| **Restore All Defaults** | Resets all patch options, including FOV and the menu shortcut. |
-| **Cursor diagnostics** | Enables additional logging for troubleshooting. |
+| **Correct pre-recorded video framing** | Enabled by default; proportionally adapts supported movies to the output. |
+| **Keep complete video image (with bars)** | Optional; shows the entire video frame instead of cropping to fill. |
+| **Use original game cursor and effects** | Retains the original cursor appearance; can be disabled for the Windows pointer alone. |
+| **Cursor control in game menus** | Manages pointer behavior in supported native menus. |
+| **Enable display correction** | Controls display and camera adaptations. |
+| **Override FOV** | Optional manual FOV control; automatic handling is the default. |
+| **Use vertical FOV** | Selects the vertical FOV axis when applicable. |
+| **Proportional game interface** | Enables uniform screen-interface adjustment. |
+| **Change menu key** | Rebinds the independent menu shortcut, initially `;` on the active keyboard layout. |
+| **Restore All Defaults** | Resets the patch's settings and shortcut. |
+| **Diagnostics** | Enables additional logs when investigating problems. |
 
-The framework host's own menu shortcut remains separate. Please allow a brief moment for configuration changes to be saved before exiting the game.
+Full-screen transitions adapt automatically when their recognized native backgrounds are available; they do not have a separate option. REFramework's own menu and settings remain independent.
 
 ## Validation and Compatibility
 
-The corrected cursor was confirmed during user gameplay testing. The main patch and both optional modules were also tested together, with no reported loading failures, crashes, or new stuttering during that session.
+The final **2.7.2 media revision** was tested in Resident Evil Village and accepted on **November 11, 2026**. The recorded session confirms active movie and transition bindings, proportional video rendering at **1920 × 1200**, and the corrected interaction-prompt scale while retaining its position.
 
-Validation included:
+Automated checks passed:
 
-- **Seven native and ABI test suites**, covering geometry, projection, cursor policy, GUI layout, managed numeric invocation, viewport policy, and plugin compatibility.
-- **93 additional checks** covering main-package contents and hashes, installation, rollback, and optional-module installation and recovery.
-- Separate DirectStorage tests for native file-I/O behavior, concurrency, timeouts, and recovery from injected failures.
+- **10 standalone C++ tests** for display policies, plugin compatibility, video bindings, and prompt geometry.
+- **27 installation checks** for installation and recovery behavior.
+- **21 package checks** for distributable layout and integrity.
 
-Coordinate tests include 4:3, 16:10, 16:9, ultrawide, 4K, and differing client/backbuffer dimensions. These automated cases do not establish compatibility with every physical display, exclusive scaling configuration, game build, driver, or mod combination. The previously reported water/lighting issue is not certified fixed by this release.
+Testing at 16:10 and automated geometry cases **does not establish universal support** for every video, display ratio, game build, or combination of mods. Unrecognized movie structures are left unchanged rather than forcefully adjusted. Some archived REFramework diagnostics are unrelated to the successful video and prompt corrections and are not claimed fixed here.
 
-See the [seven-point audit](docs/audit-2.7.0.md) and [validation record](docs/validation-2.7.0.json) for the tested scope and exact binary identities.
+For the current record, see the [final revision notes](docs/RE8Display-2.7.2-media-r2.md) and [validation data](docs/validation-2.7.2-media-r2.json). Older 2.7.2 candidate reports do not supersede the final tested revision.
 
 ## Troubleshooting and Removal
 
-| Symptom | Suggested check |
+| Symptom | What to check |
 | --- | --- |
-| Plugin does not load | Verify plugin API 1.15+ compatibility and the location of `RE8Display.dll`. |
-| Unexpected aspect ratio or FOV | Disable competing camera/interface corrections and try automatic FOV handling. |
-| Cursor behavior differs from your preference | Check both cursor options and temporarily enable cursor diagnostics. |
-| Menu shortcut does not respond | Check the active keyboard layout or your saved custom binding. |
-| Settings changed after an upgrade | Restore your backed-up private INI or use Restore All Defaults. |
+| Plugin does not load | Confirm `dinput8.dll` is next to `re8.exe`, the plugin is under `reframework/plugins/`, and the host supports plugin API 1.15+. |
+| Video still looks stretched | Enable **Correct pre-recorded video framing**; try switching the complete-image option and report the affected movie. |
+| Bars appear around a video | Disable **Keep complete video image (with bars)** if you prefer proportional fill with cropped edges. |
+| Unexpected aspect ratio or FOV | Turn off competing camera and ultrawide corrections; try automatic FOV handling. |
+| Cursor or shortcut does not behave as expected | Check the two cursor options, custom menu binding, and active keyboard layout. |
+| Personal settings changed after upgrading | Restore your backed-up `RE8Display.ini` or use **Restore All Defaults**. |
 
-To remove the display patch, close RE8 and remove `RE8Display.dll` and `RE8Display.LICENSE.txt` from `reframework/plugins/`. Remove `reframework/data/RE8Display.ini` only if you also want to discard your settings. Keep `dinput8.dll` if you use REFramework for other mods. If replacing the bundled host causes a compatibility problem, restore your previous loader from its backup. Optional modules have their own uninstallers; unrelated mods and game saves should remain in place.
+To remove only RE8Display, close the game and remove `RE8Display.dll` and its corresponding license notice from `reframework/plugins/`. Remove `reframework/data/RE8Display.ini` only if you want to discard your preferences. **Keep `dinput8.dll` if other mods still require REFramework.** To restore a previous host, use your backed-up loader. Optional modules have their own installation and removal procedures.
+
+## Optional Technology Modules
+
+These are **separate downloads**, unchanged by this display and media revision. The main RE8Display patch works without them.
+
+### DirectX 12 Agility SDK 722
+
+**Optional package:** `RE8Agility-722-Game-2.7.2 (Optional).zip`
+
+This bridge allows RE8 to select a private Agility SDK 722 runtime at startup and report the graphics capabilities actually available on the game device. Its activation was verified during earlier combined-module testing. It does not replace system DirectX files or automatically introduce newer rendering features.
+
+### DirectStorage 1.4
+
+**Optional package:** `RE8DirectStorage-1.4-Game-2.7.2 (Optional).zip`
+
+This bridge routes eligible read-only game-archive requests through DirectStorage into CPU memory, retains the game's original decompression path, and provides native fallback and verification. Earlier combined-module testing recorded **64 successful native comparisons** without verification failures. The module was not changed by this release's video corrections.
+
+**Scope:** Neither module guarantees FPS, VRAM, or loading-time improvements. They do not add newer DXR features or GPU asset decompression. Each optional module requires its matching original Microsoft preview package, which is not redistributed in the optional ZIPs.
 
 ## Building from Source
 
-The project includes pinned REFramework public SDK and MinHook dependencies. A full framework source checkout is not required.
-
-Use Windows x64, CMake, and Visual Studio 2022 or 2026 C++ Build Tools:
+Windows x64, CMake 3.20 or newer, and a Visual Studio C++ toolchain supporting C++23 are required. The source archive includes the plugin's required SDK and MinHook source dependencies.
 
 ```powershell
-.\tools\RE8Display.Build.ps1
-.\tools\RE8Display.Test.ps1
-.\tools\RE8Display.Package.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/RE8Display.Build.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/RE8Display.Test.ps1
 ```
 
-The source packaging script produces the plugin-only archive. The current distributed bundle additionally includes the compatible REFramework loader described above.
-
-For Visual Studio 2022, pass `-Generator 'Visual Studio 17 2022'` to the build and test scripts. Package integrity can then be checked using `tests/RE8Display.Package.Tests.ps1` and the generated package directory.
-
-| Directory | Contents |
-| --- | --- |
-| `native/` | Display plugin and separate technology bridges |
-| `config/` | Default private settings |
-| `external/` | Pinned dependencies and private local SDK packages |
-| `tests/` | Native, installation, recovery, and package checks |
-| `tools/` | Build, test, installation, and packaging scripts |
-| `docs/` | Guides, validation records, and release artwork |
+The source build and installation bundle serve different purposes: the distributed v2.7.2 game ZIP additionally contains the compatible REFramework host. The build receipt and checksums identify the final tested plugin binary.
 
 ## Credits and Feedback
 
 **Maintained by [XssentialPilar](https://github.com/XssentialPilar).**
 
-- [REFramework and its SDK](https://github.com/praydog/REFramework) — Praydog and contributors.
+- [REFramework](https://github.com/praydog/REFramework) and its public SDK — Praydog and contributors.
 - [MinHook](https://github.com/TsudaKageyu/minhook) — API interception dependency.
-- **Resident Evil Village** — Capcom.
+- **Resident Evil Village / RE Engine** — Capcom.
 
-Required license notices accompany the plugin. No game assets are distributed in the runtime ZIPs.
+This is an independent community project, not affiliated with or endorsed by Capcom. Required license notices accompany the distributable plugin; game artwork is not bundled in the runtime ZIP.
 
-Thank you for using, testing, and supporting RE8Display. If something does not work as expected, please [report the issue](https://github.com/XssentialPilar/Resident-Evil-8-Village-Aspect-Ratio-Patch-/issues) with your resolution, display mode, REFramework version, installed optional modules, and steps to reproduce it. Clear reports help make each update more reliable for everyone.
-
-## Optional Technology Modules
-
-These are **separate, optional downloads**. The main display patch works without either module. Please follow each module's included installer and removal instructions rather than copying its payload files directly into the game.
-
-### DirectX 12 Agility SDK 722
-
-**Package:** `RE8Agility-722-Game-2.7.0 (Optional).zip`
-
-This startup bridge selects a private Agility SDK 722 runtime before RE8 creates its graphics device. It records the actual device SDK, highest supported shader model, and DXR tier, making activation and hardware capabilities easier to verify. The new bridge confirmed **SDK 722 on the real game device** during the combined gameplay test.
-
-The module installs its proxy beside `re8.exe` and keeps the private runtime in its own game-local directory. It does not replace Windows system DirectX files. Another mod using the same `d3d12.dll` proxy filename may conflict; the installer checks for conflicting files and creates recovery records.
-
-### DirectStorage 1.4
-
-**Package:** `RE8DirectStorage-1.4-Game-2.7.0 (Optional).zip`
-
-This bridge sends eligible synchronous, read-only PAK requests through a DirectStorage queue into **CPU memory**. RE8 retains its original decompression and GPU-upload stages. Native fallback, bounded requests, and startup comparisons protect the existing file-I/O behavior.
-
-Version 2.7.0 avoids waiting for the I/O mutex during render-thread collection and removes the verification-lock cost after the initial comparisons. The recorded game test confirmed **22,957 PAK reads, 5.65 GB of data, and 64 successful native comparisons**, with zero recorded verification errors, timeouts, runtime errors, or native compatibility errors.
-
-### Technical Scope and Preview Requirements
-
-Activating a newer runtime does not automatically modernize the game's renderer or assets. These modules **do not integrate clustered geometry, PTLAS, SER, or OMM into RE8**, and they do not implement Zstd/GACL asset conversion, GPU decompression, or CreatorID-based GPU scheduling. They provide the runtime-selection and raw file-I/O functionality described above.
-
-Both installers require the **original matching Microsoft preview package**, which is not redistributed in the module ZIPs. Please review its included terms before installation. No specific FPS increase, VRAM reduction, instantaneous loading, or universal compatibility is promised.
+Thank you for supporting RE8Display. If you find a problem, please [open an issue](https://github.com/XssentialPilar/Resident-Evil-8-Village-Aspect-Ratio-Patch-/issues) and include the affected screen or video, resolution, aspect ratio, display mode, REFramework version, installed optional modules, and steps to reproduce it. Screenshots or short recordings help make future updates more reliable.
