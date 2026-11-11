@@ -34,7 +34,7 @@ public:
     void draw() const {
         if (!available || !tree("Aspect Ratio Config Menu")) return;
         struct Pop { Void function; ~Pop() { function(); } } pop{tree_pop};
-        say("RE8Display 2.7.0");
+        say("RE8Display 2.7.2");
         const auto shortcut = "Open menu: " + Context::get().menu_key_name();
         say(shortcut.c_str());
         if (press("Open display settings")) Context::get().set_own_ui_open(true);
@@ -50,7 +50,7 @@ public:
         if (set_size) set_size({std::min(500.0f, bounds.max_width), std::min(560.0f, bounds.max_height)}, 4);
         // A bounded, scrollable window; AlwaysAutoResize allowed long labels to
         // push the old panel outside small outputs and clip its bottom controls.
-        if (begin("RE8Display 2.7.0 - Settings", &open, 0)) draw_controls();
+        if (begin("RE8Display 2.7.2 - Settings", &open, 0)) draw_controls();
         end();
         context.set_own_ui_open(open);
     }
@@ -77,6 +77,14 @@ public:
             changed = checkbox("Use vertical FOV", &value.vertical_fov) || changed;
             changed = checkbox("Proportional game interface", &value.uniform_ui) || changed;
         }
+        separator();
+        say("PRE-RECORDED VIDEOS");
+        changed = checkbox("Correct pre-recorded video framing", &value.video_framing) || changed;
+        if (value.video_framing) {
+            changed = checkbox("Keep complete video image (with bars)", &value.video_contain) || changed;
+            say(value.video_contain ? "Proportional fit: preserves the complete frame." : "Proportional fill: centered cropping, without stretching.");
+        }
+        say("Full-screen transitions are always adapted.");
         separator();
         say("SHORTCUT AND DEFAULTS");
         const auto shortcut = "Menu key: " + context.menu_key_name(); say(shortcut.c_str());

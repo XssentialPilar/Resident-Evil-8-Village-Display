@@ -1,0 +1,628 @@
+{
+    "version":  "2.7.2",
+    "revision":  "media-r2",
+    "sourceFingerprint":  "5B278B4D91795961D6A8C93552349146D5B961C55AF6601A49B3657C5A59DE58",
+    "binarySha256":  "71FC52837ED69C864AEEF32460A9EBF482BC6BDE33091E14D44C97053D8B26D0",
+    "files":  [
+                  {
+                      "path":  ".gitattributes",
+                      "sha256":  "92210F38C4511B184DFA77760A6DFB3ACC0A1BE8CD430B17BD7803C23C98B843"
+                  },
+                  {
+                      "path":  ".gitignore",
+                      "sha256":  "9B2D65164C4FB9921399F9A635E91DC376B916C742945780F99F229C047A0009"
+                  },
+                  {
+                      "path":  "AGENTS.md",
+                      "sha256":  "32EEA247E2B3DC0987609C0F52A58B57B46347009BCE3517FF65A235E959594C"
+                  },
+                  {
+                      "path":  "BUILD-RECEIPT.json",
+                      "sha256":  "8EDDC016A8CFEF5DA0357E84699A2907A046C5CAD9E1BAEF882FBE1251EC3FC4"
+                  },
+                  {
+                      "path":  "CMakeLists.txt",
+                      "sha256":  "FF1254EE329B7A51EC4EDB50988EF65156E84F4CC8C016AC59B4C0823C93CC39"
+                  },
+                  {
+                      "path":  "config/RE8Display.ini",
+                      "sha256":  "938CC3D53EEF315F0E1A4CF29261113B717C615801A0D12E498E91132FCBCFDE"
+                  },
+                  {
+                      "path":  "docs/agility-1.722.0-preview-assessment.md",
+                      "sha256":  "8043F0BBA1EE26D52827DD5561D53B5D86F9802C0DC1DD670CCCFAC6F972C887"
+                  },
+                  {
+                      "path":  "docs/AgilityBridge-2.7.0.md",
+                      "sha256":  "E58F36D9C21005682BF81FEDBEC4CBCC4FD65B3C92AAA6CF71F1DDC7D2F800CA"
+                  },
+                  {
+                      "path":  "docs/AgilityBridge-README.md",
+                      "sha256":  "C2EF6C1CE5705B6D3DAD4AFCA3CE1098AFF6B7F24A9DEB6C31EB83ED7260E99E"
+                  },
+                  {
+                      "path":  "docs/AgilityBridge-validation.md",
+                      "sha256":  "15D1FDDB863E6D8A8BE93BDC29EE56768AF542D1AB4015E877A2DE31DF0C8315"
+                  },
+                  {
+                      "path":  "docs/agility-compatibility-kit-README.md",
+                      "sha256":  "835D1082B5AB62737972E41C4F9288A47AA8A10C61A812C213420623EC1D9325"
+                  },
+                  {
+                      "path":  "docs/agility-game-integration-feasibility.md",
+                      "sha256":  "4D8D05A5E1B35E4E54D4A929DE1192E344062FAB19BC646504433E5580D1C116"
+                  },
+                  {
+                      "path":  "docs/audit-2.7.0.md",
+                      "sha256":  "0D1453A4F0FEFCF9F76153ACE42155AD0979AE49CCAB7474079EB529B9D5B679"
+                  },
+                  {
+                      "path":  "docs/build-2.7.2.md",
+                      "sha256":  "94461C3821EC1272ADE422023A8F650648573E593A3F178FE4BA012BA4397627"
+                  },
+                  {
+                      "path":  "docs/directstorage-1.4-preview-assessment.md",
+                      "sha256":  "0BDDC7608BEB566ADED41112F897C543733E39F4EF02B85746FB711DD5B82F90"
+                  },
+                  {
+                      "path":  "docs/DirectStorageBridge-2.7.0.md",
+                      "sha256":  "0A9DEEB8BC6A1FCC468BD04380008803C8C2986391D22B24E56C0A18A7E1DF03"
+                  },
+                  {
+                      "path":  "docs/DirectStorageBridge-README.md",
+                      "sha256":  "53E08333038BBB6C05F5B7EAF38F614E07B7F92EDDE089EEC6DF54EAC043A99A"
+                  },
+                  {
+                      "path":  "docs/DirectStorageBridge-validation.md",
+                      "sha256":  "E2E8844E9F239074A0BDB1330EF950FE5D1BFADDEFE95F4B781C75EDDE6F7F73"
+                  },
+                  {
+                      "path":  "docs/evidence/baseline-display.jpg",
+                      "sha256":  "96778CC11CF7B44D004EE43BC3DC6B982B74C213801E2EF6A067E7875C3EE5EB"
+                  },
+                  {
+                      "path":  "docs/evidence/cursor-calibration/1. LEFT TOP.jpg",
+                      "sha256":  "C8A8EA35AE60FE686BE5CAE61952F446A14BE49321B0EDCB6B5ABE8A87956FD9"
+                  },
+                  {
+                      "path":  "docs/evidence/cursor-calibration/2. LEFT BOTTOM.jpg",
+                      "sha256":  "DC9F1CF3AA0C6D7E3C44C68B6666B075EEBA9D38E836227059962C3C06D5F53A"
+                  },
+                  {
+                      "path":  "docs/evidence/cursor-calibration/3. RIGHT BOTTOM.jpg",
+                      "sha256":  "E3A07448A9288C939EDE3BB3CC862CE15EADA89764FD86E7BC10DAAD0F5EFA65"
+                  },
+                  {
+                      "path":  "docs/evidence/cursor-calibration/4. RIGHT TOP.jpg",
+                      "sha256":  "14FD4E6E82A589E83112D41655137596939867C9AF06328001DA31471BE0A9A3"
+                  },
+                  {
+                      "path":  "docs/evidence/runtime-feedback/manifest.json",
+                      "sha256":  "31D6C8CF394043B3816C7DF5159B46B8D433128ABE6BDFA8BDAF59C28125CAAE"
+                  },
+                  {
+                      "path":  "docs/evidence/runtime-feedback/re8_2026_11_01_22_30_14_393.png",
+                      "sha256":  "A69C65A0C1A3D70964D1F7B0A91202EA92CD52A0438CE8CAE59A0B0588B2F4B9"
+                  },
+                  {
+                      "path":  "docs/evidence/runtime-feedback/re8_2026_11_01_22_32_39_926.png",
+                      "sha256":  "E4D3958B7ABA85DF8E230170F952357783F97F084FEFA1A6B35D08E0ED665D53"
+                  },
+                  {
+                      "path":  "docs/media/RE8Display-2.7.0-overview.jpg",
+                      "sha256":  "72188F29B8DCDAE08100419323C2D58919FE38EB32F80C24494CCBC079F77931"
+                  },
+                  {
+                      "path":  "docs/media/RE8Display-2.7.0-overview.png",
+                      "sha256":  "4D18A322340F4D7B786100ED8ECA070C760ECB053E03270E0CD5A995C60B5D05"
+                  },
+                  {
+                      "path":  "docs/media/README.md",
+                      "sha256":  "1C0A60FD0E55BCCC6B31E2EF2CDE59E5B727AEFD616D73BBF1427D624EF35939"
+                  },
+                  {
+                      "path":  "docs/RE8Display-2.7.2-media-r2.md",
+                      "sha256":  "1EF0B44AF5A76827A678FFD0B42C31372CB3B183D58D74AC5336A72DEA68D17D"
+                  },
+                  {
+                      "path":  "docs/release-2.5.0.md",
+                      "sha256":  "1246ECF8C3EFE7687BA86F36A387479A713C5C88DBB4F05A19C13A0ABD00B26D"
+                  },
+                  {
+                      "path":  "docs/release-2.7.0.md",
+                      "sha256":  "4BDC1E77E4D741B436C6AFBF5A256400BC77D7E809C98E54D860356F744EBEEB"
+                  },
+                  {
+                      "path":  "docs/release-2.7.2.md",
+                      "sha256":  "AB3001C6DD7582F1C4AD1204C734C1ECE90F650334164F0D7C5948AEC9D58373"
+                  },
+                  {
+                      "path":  "docs/release-notes-2.5.0.md",
+                      "sha256":  "D0FE8F54E655098C55DC13579E2E5B71D8B6BAFFA9C4861F6C1F3F73260C7F90"
+                  },
+                  {
+                      "path":  "docs/release-notes-2.7.0.md",
+                      "sha256":  "FABE11F486684E125CBCAD10CB600FF8E3CFA929FE21CFCFFE5F68D601C18740"
+                  },
+                  {
+                      "path":  "docs/technology-integration-status.md",
+                      "sha256":  "C009F9AE650875D454B3E854C43260EF3AD8E786865A53165B82CB9B1491AB55"
+                  },
+                  {
+                      "path":  "docs/validation-2.5.0.json",
+                      "sha256":  "9D7486E850BB039348CFFC57FE990A613EED10613EFAA753A477647F0D0F2C72"
+                  },
+                  {
+                      "path":  "docs/validation-2.7.0.json",
+                      "sha256":  "B08AA62F13B9F538DBD7FD2D371501E50C49227A8CA3111BAFB6CF27988912C2"
+                  },
+                  {
+                      "path":  "docs/validation-2.7.2.json",
+                      "sha256":  "A30ECD61BB10CFE55AE096E4E8EC2D83810E49EB52F3531AE54DE460D3E13D95"
+                  },
+                  {
+                      "path":  "docs/validation-2.7.2-media-r2.json",
+                      "sha256":  "8B35D8D4658C9F6BD809F66CD5B282D9E08BFA23EF4CD4818539DB96094E691A"
+                  },
+                  {
+                      "path":  "docs/workspace-layout.md",
+                      "sha256":  "3D9483EB7C23640CBB1DB0C57D6A85B0473E2553C875784B8130583BAEA6021F"
+                  },
+                  {
+                      "path":  "external/minhook/include/MinHook.h",
+                      "sha256":  "C3608E584BD9659AEBDBB4C8C82585605989193623F240552D35C43311B3D31A"
+                  },
+                  {
+                      "path":  "external/minhook/LICENSE.txt",
+                      "sha256":  "4F21F857550D7BE854DA6EA5F2DA4E6775CA4E3FBB535E4F3D961C47D0BF3335"
+                  },
+                  {
+                      "path":  "external/minhook/src/buffer.c",
+                      "sha256":  "69045B390E0F18CF149EA0451AE750F389654EB8D2ED7F2F89C7FF04B7909519"
+                  },
+                  {
+                      "path":  "external/minhook/src/buffer.h",
+                      "sha256":  "175EC5496C020509CF4C7670322B51B5BCD5B63A345BFEFC4A19B43675857FA7"
+                  },
+                  {
+                      "path":  "external/minhook/src/hde/hde32.c",
+                      "sha256":  "2D4D7DD73D609028822AAF71AC05112B83FE6CC2AE2D6D71FA051B3FC6ACFC43"
+                  },
+                  {
+                      "path":  "external/minhook/src/hde/hde32.h",
+                      "sha256":  "754579FBCEC5F64FA229646CEECB241C0B7F31C8A0BB12370E604C316C569315"
+                  },
+                  {
+                      "path":  "external/minhook/src/hde/hde64.c",
+                      "sha256":  "06B588A5140E15F0A55E13DDADC7E3A4648F3223CEFAB2D5285B796A422BB9F5"
+                  },
+                  {
+                      "path":  "external/minhook/src/hde/hde64.h",
+                      "sha256":  "FD5B39E2865E12B9525EBDA8FD9E9658B341EAD5932D1BCB412A189F81CA42CA"
+                  },
+                  {
+                      "path":  "external/minhook/src/hde/pstdint.h",
+                      "sha256":  "975488009779EA99C7E04B83A160397D5CD7195CB5BF6AD79180805F756C7D00"
+                  },
+                  {
+                      "path":  "external/minhook/src/hde/table32.h",
+                      "sha256":  "E56F8641BD9133C1B99A1E6555B19EEBE7ED663E5EA8DE4EDBE74BA461161AB4"
+                  },
+                  {
+                      "path":  "external/minhook/src/hde/table64.h",
+                      "sha256":  "0B6C69AD498E67907E0C574AB06123AEE4EC30C99FA181099EA929A8D820BFC1"
+                  },
+                  {
+                      "path":  "external/minhook/src/hook.c",
+                      "sha256":  "C3D40749F9D4EFD96D87716CC9105EAFBAA8B32E94FB61C0EE820A5ADFA263F7"
+                  },
+                  {
+                      "path":  "external/minhook/src/trampoline.c",
+                      "sha256":  "57A661DC765766C501D2EF60E324F20045C8E299E862EA7C8E3A00360219AA89"
+                  },
+                  {
+                      "path":  "external/minhook/src/trampoline.h",
+                      "sha256":  "23681F7768D5DBD23EA14B45BA64E488A337501F23122253C532B05DBED4B85F"
+                  },
+                  {
+                      "path":  "external/reframework-sdk/reframework/API.h",
+                      "sha256":  "73DA3D6E1C81D066D97AC638F91C715E3561D00DBA1E4585BC22AE4442F88946"
+                  },
+                  {
+                      "path":  "external/reframework-sdk/reframework/API.hpp",
+                      "sha256":  "6180E34871C82BB2F0DF11BB0B8F3F834F600E2C4E1149C3EFADFBD33AC28357"
+                  },
+                  {
+                      "path":  "external/standalone-dependencies.json",
+                      "sha256":  "18A350C8EFA1FEC774EA9F8BE85EE587413E064D162C8B68D44593BFA05B5103"
+                  },
+                  {
+                      "path":  "LICENSE",
+                      "sha256":  "7F99A257B7DBE25FC4ADBC6E2622B1DD7D217E2CF568ADBD7945B66BF86D1748"
+                  },
+                  {
+                      "path":  "licenses/asmjit/LICENSE.md",
+                      "sha256":  "6DE84DEBF5D9D30B252C397FC6FFF79820B32B7513ED5E338E2AB4B8554F9ED6"
+                  },
+                  {
+                      "path":  "licenses/bddisasm/LICENSE",
+                      "sha256":  "C379E47C03B92CD6C79FC024FE6E7823652F0BC34910309D9371DFE9C907288D"
+                  },
+                  {
+                      "path":  "licenses/directxtk/LICENSE",
+                      "sha256":  "9906940F61B1F0B533FA7D99BAF55178B2808FBE113EA51DFBFAD8572CCD5F2B"
+                  },
+                  {
+                      "path":  "licenses/directxtk12/LICENSE",
+                      "sha256":  "9906940F61B1F0B533FA7D99BAF55178B2808FBE113EA51DFBFAD8572CCD5F2B"
+                  },
+                  {
+                      "path":  "licenses/freetype/FTL.TXT",
+                      "sha256":  "308DCA54B5AAA4A6BA0880621FE3BCF287956821AA948430263062A8333625C0"
+                  },
+                  {
+                      "path":  "licenses/freetype/GPLv2.TXT",
+                      "sha256":  "6046DA9F0FBC470892625B2F1313F16B5CA375B5C869B3540EA7EF2AD8877A12"
+                  },
+                  {
+                      "path":  "licenses/freetype/LICENSE.TXT",
+                      "sha256":  "84F47DC7F0887DD56B05F2F218060581C055E443BD7AF18E46677BEC3DCC2473"
+                  },
+                  {
+                      "path":  "licenses/glm/copying.txt",
+                      "sha256":  "48A257765EA19D81252EE44CBA0F0EDA525C6B2DCBF483CC39015DD76A6F0A20"
+                  },
+                  {
+                      "path":  "licenses/imgui/LICENSE.txt",
+                      "sha256":  "55E058CC5899E6077A819AD1005D6D1F4528F65AE100795C9692F9FA6525A8CE"
+                  },
+                  {
+                      "path":  "licenses/imguizmo/LICENSE",
+                      "sha256":  "AAD1F9DF039FB26D448BB398CF6F09F5E480617E05F41F2AFC3B996959759EDA"
+                  },
+                  {
+                      "path":  "licenses/imnodes/LICENSE.md",
+                      "sha256":  "767A41002873B84D125F69CC6453215AEA3670E890D82DD939C6EC059BE907D5"
+                  },
+                  {
+                      "path":  "licenses/kananlib/LICENSE",
+                      "sha256":  "BEB8E42E9D6B4284E03304D05A81A0755200A965FC8D0A5E0AEA1E84CF805D6E"
+                  },
+                  {
+                      "path":  "licenses/license-sources.json",
+                      "sha256":  "9CB18D25326EC513C5974B43E395E7545C5FF9AFE204C7214C484B3E750F4094"
+                  },
+                  {
+                      "path":  "licenses/lua/LICENSE.txt",
+                      "sha256":  "8EE664CC0DB25A37699427F85F600DDC56D929092A737FAC7F3605DF50FB73C3"
+                  },
+                  {
+                      "path":  "licenses/minhook/LICENSE.txt",
+                      "sha256":  "4F21F857550D7BE854DA6EA5F2DA4E6775CA4E3FBB535E4F3D961C47D0BF3335"
+                  },
+                  {
+                      "path":  "licenses/nlohmann-json/LICENSE.txt",
+                      "sha256":  "E8A335131B93CE35B1098B46ED940A7569F42790F462941670AE532E95FCD01D"
+                  },
+                  {
+                      "path":  "licenses/openxr/COPYING.adoc",
+                      "sha256":  "E5E553CDEAFC265E04C2E088E5E3D37658B4E5615FEF46262FB463A24FAFB652"
+                  },
+                  {
+                      "path":  "licenses/openxr/LICENSE",
+                      "sha256":  "3DDF9BE5C28FE27DAD143A5DC76EEA25222AD1DD68934A047064E56ED2FA40C5"
+                  },
+                  {
+                      "path":  "licenses/REFramework-MIT.txt",
+                      "sha256":  "DC412F7E8B83F2D15623CB5FB0D82428A6F5F5ECDB3E80EEC4CF4481862A82E5"
+                  },
+                  {
+                      "path":  "licenses/safetyhook/LICENSE",
+                      "sha256":  "36266A8FD073568394CB81CDB2B124F7FDAE2C64C1A7ED09DB34B4D22EFA2951"
+                  },
+                  {
+                      "path":  "licenses/sol2/LICENSE.txt",
+                      "sha256":  "A859B1D0562DB1722760CB3A11393D297E4D62A6BE635A019C72EC7834D743D8"
+                  },
+                  {
+                      "path":  "licenses/spdlog/LICENSE",
+                      "sha256":  "4CCECAB18D1FF0B61174FE3D6C430541625D3DDB865B0D5887DB296F883C76E7"
+                  },
+                  {
+                      "path":  "licenses/zycore/LICENSE",
+                      "sha256":  "389568C4B920A0FC96E0D1D76015BFC1102C6C4521A1AFD6E31150F0210EE982"
+                  },
+                  {
+                      "path":  "licenses/zydis/LICENSE",
+                      "sha256":  "240802D87AE8054D3CBA8CD337332A6741894C65A0C2CE444C4C43EAD494A1A6"
+                  },
+                  {
+                      "path":  "native/agility_bridge/CMakeLists.txt",
+                      "sha256":  "5BE05B94FA7C4A25B9BA91C858DF9C029CDA1236C493435FB9BD5EF55B7546C4"
+                  },
+                  {
+                      "path":  "native/agility_bridge/RE8AgilityBridge.cpp",
+                      "sha256":  "4CE3EF78907D3953E5E7E329962CAD9CB6F4F4EB3DE7A94BDF1D46B56D4FF4AB"
+                  },
+                  {
+                      "path":  "native/agility_bridge/RE8AgilityBridgeTestHost.cpp",
+                      "sha256":  "57E5ADF4625B85B86F9488DD3D3F7547095E5D31BF2500B887DE2773140CFC9E"
+                  },
+                  {
+                      "path":  "native/agility_probe/CMakeLists.txt",
+                      "sha256":  "062502FF9B2EBBB6E5BE87FAD31ED0FE8B00F540D24A1CEF293BB51D1204E0F8"
+                  },
+                  {
+                      "path":  "native/agility_probe/RE8AgilityProbe.cpp",
+                      "sha256":  "B428D14A9CC4ECDF861EAA75B6B565D3B3F2631560DD5C6C87FB1D390C78AC4B"
+                  },
+                  {
+                      "path":  "native/CMakeLists.txt",
+                      "sha256":  "3A20836C64026971DC62D3303927AE296F5F63EDFD7040286E45A6DDE4191A6D"
+                  },
+                  {
+                      "path":  "native/common/RE8CameraProjection.hpp",
+                      "sha256":  "BF79099468A50B797581DF66CFC210933B83BBD1EDC3CA1BAC727BE612ED3590"
+                  },
+                  {
+                      "path":  "native/common/RE8CursorGeometry.hpp",
+                      "sha256":  "111CA5102B588DCD04363155595F71DA6308299936DDA4523CF8B1D69DFA8FD4"
+                  },
+                  {
+                      "path":  "native/common/RE8CursorPolicy.hpp",
+                      "sha256":  "FF7D0037EBA622D62FBC0F52F85806C5B36CD4168155EE65DD63206A8DB86D0A"
+                  },
+                  {
+                      "path":  "native/common/RE8DisplayGeometry.hpp",
+                      "sha256":  "50BCE76F05624444D387F659A7348841D5A8CAD5AC880BB79F96939AFD1C62BC"
+                  },
+                  {
+                      "path":  "native/common/RE8GuiLayout.hpp",
+                      "sha256":  "C065F65316095295565C661FE344079E3980802444BD65541F7E61EF8A0768D9"
+                  },
+                  {
+                      "path":  "native/common/RE8ManagedNumeric.hpp",
+                      "sha256":  "35BA0D1F18AE5BD2DAF7C3601162D87D5AF0044365ED3DC40BD0DEB9575FE299"
+                  },
+                  {
+                      "path":  "native/common/RE8MediaLayout.hpp",
+                      "sha256":  "8C72F762701591FF1F2891152863870983B2671CD472BBB947D68BF4AC782FDE"
+                  },
+                  {
+                      "path":  "native/common/RE8MethodLookup.hpp",
+                      "sha256":  "F9160F4EBC57DF2AC670F6CD99F0E530659578F310DD9E5A7AB701DBBD25F420"
+                  },
+                  {
+                      "path":  "native/common/RE8PromptLayout.hpp",
+                      "sha256":  "24BFFF67335EBD7282D2629499E68537C5652FB6A5A0BC07FDC8A152E6B131BA"
+                  },
+                  {
+                      "path":  "native/common/RE8ViewportPolicy.hpp",
+                      "sha256":  "C06C30C8A7D4EB23D64E83C5B0D4F22F3BA967A3CFB1C8321A9213E8E907126F"
+                  },
+                  {
+                      "path":  "native/directstorage_bridge/CMakeLists.txt",
+                      "sha256":  "896AD0911228314924DE461FCF2847208491BCB31405A13C90E660C71ABC0B75"
+                  },
+                  {
+                      "path":  "native/directstorage_bridge/RE8DirectStorageBridge.cpp",
+                      "sha256":  "4854D9FC28FA23016C8655AC85F038074EFE3AF1945DEB98FC9E577FB135D4A1"
+                  },
+                  {
+                      "path":  "native/directstorage_bridge/RE8DirectStorageCore.hpp",
+                      "sha256":  "D80D5B83083CBC51EED8BC3116C11CE7C8D0A5D2CB0A7FF1376F2C21D266EA2F"
+                  },
+                  {
+                      "path":  "native/directstorage_probe/CMakeLists.txt",
+                      "sha256":  "01619FCD654ADB4CC825164B2C1AC722E764328833A21DD0A8F2F36C9C514ACB"
+                  },
+                  {
+                      "path":  "native/directstorage_probe/main.cpp",
+                      "sha256":  "6378E115F77F21202F3848171044DAED1DACE33A22DE5193A99167B0BCBE10BE"
+                  },
+                  {
+                      "path":  "native/directstorage_probe/README.md",
+                      "sha256":  "4332452527EFB787D8E2C97AFEC0F2F0F3DA922FF5263E111602E3608FE2524E"
+                  },
+                  {
+                      "path":  "native/plugin/RE8Display.rc",
+                      "sha256":  "1FE02437DF59CDE7FBC640C1F720FF691700397ED345F080B2A7EF63B988E797"
+                  },
+                  {
+                      "path":  "native/plugin/RE8Plugin.cpp",
+                      "sha256":  "986C7D387F42D10D48995F26B6EBC578EE4062EAE8EE6A0316EA01683A013539"
+                  },
+                  {
+                      "path":  "native/plugin/RE8PluginContext.hpp",
+                      "sha256":  "8B11BC852971DB5EE63A999DCC3991DC42D83E4DBE344A25FE7D2C800EA2C617"
+                  },
+                  {
+                      "path":  "native/plugin/RE8PluginCursor.hpp",
+                      "sha256":  "4CA95B01122D85C39A63848CE01F67FF6CB903275695E9CA871889605A8E294A"
+                  },
+                  {
+                      "path":  "native/plugin/RE8PluginDisplay.hpp",
+                      "sha256":  "B6D01A604306835EC75B5DF11F1D63A1E1516772FA3D604BE7D34541A11839CB"
+                  },
+                  {
+                      "path":  "native/plugin/RE8PluginInvoke.hpp",
+                      "sha256":  "4FD3C895E7E11966F40439A4FA5BDD9E13148998EFD9E7EA7BF10F727C8D7F34"
+                  },
+                  {
+                      "path":  "native/plugin/RE8PluginMedia.hpp",
+                      "sha256":  "46320440DBFF99C0E020961E2E2785D5E6EACB1CBFAE5C3717BEEA01F71619DC"
+                  },
+                  {
+                      "path":  "native/plugin/RE8PluginPrompt.hpp",
+                      "sha256":  "6FF15A15175B7E0DD7FF3F6C55FB583230D9E4A0BAE15AB1423CEE3ABB4A499E"
+                  },
+                  {
+                      "path":  "README.md",
+                      "sha256":  "60CB4C8E32FF090E6869429CDE9C9AD03211F1B317E14415394657FE20B0E62E"
+                  },
+                  {
+                      "path":  "START-HERE.md",
+                      "sha256":  "1EF0B44AF5A76827A678FFD0B42C31372CB3B183D58D74AC5336A72DEA68D17D"
+                  },
+                  {
+                      "path":  "tests/RE8DirectStorage.Validation.Tests.ps1",
+                      "sha256":  "FCDCAE28665E90B3E7085E401F4902713CCFBF2FF1682D83C9B177A579F14B6E"
+                  },
+                  {
+                      "path":  "tests/RE8Display.Install.Tests.ps1",
+                      "sha256":  "52D47CC1ED2B8C1CB82257E28D16F89460F007E8184C4709D6F87DB1E0A6BAEA"
+                  },
+                  {
+                      "path":  "tests/RE8Display.Package.Tests.ps1",
+                      "sha256":  "1100B23EADB24D230C672F930ABEB2AA43020814D80CB5D3031AAB6529E9BD9F"
+                  },
+                  {
+                      "path":  "tests/RE8Technology.Tests.ps1",
+                      "sha256":  "05758A8446052D295EE77E11481823DC88EF6E68AD3AD75BEF466DCCC8E9A9C5"
+                  },
+                  {
+                      "path":  "tests/standalone/CMakeLists.txt",
+                      "sha256":  "D1670E5696ED945627FA21FECC19D1E909D4C68D7689976B4243EAF8EA2372A0"
+                  },
+                  {
+                      "path":  "tests/standalone/cursor.cpp",
+                      "sha256":  "D85955899B84D2BE5B0F3C50D85F9456B15EE11911509767808E94B9D73A5470"
+                  },
+                  {
+                      "path":  "tests/standalone/geometry.cpp",
+                      "sha256":  "93EA86629A74A9C205F9FBAF63F618143307BDD4121FC8C03994D3EBAC4928AA"
+                  },
+                  {
+                      "path":  "tests/standalone/gui_layout.cpp",
+                      "sha256":  "9C3DDF4D5F95C9F5FF5256DB9C4B4766D69288383B180FD08B5C354D9905ED73"
+                  },
+                  {
+                      "path":  "tests/standalone/invoke_numeric.cpp",
+                      "sha256":  "5873918C4267CA7F5CBCE2DAD62CEAE54845E22B6475C2652EC40D9F226241CF"
+                  },
+                  {
+                      "path":  "tests/standalone/media_layout.cpp",
+                      "sha256":  "220F35D044F4FE9C377A5BE8078E48B4C0EB0C88F84BE4EA7B868EC1F34AFD4B"
+                  },
+                  {
+                      "path":  "tests/standalone/method_lookup.cpp",
+                      "sha256":  "BAC8A58CC6060C4AB2AF18BD7336398D35AA4974C8BEF074546F329912AC1BD8"
+                  },
+                  {
+                      "path":  "tests/standalone/plugin_abi.cpp",
+                      "sha256":  "2701F6481A743FB859045A24C52D27AA635D8B4A66465AD6577B3BF4589B95CE"
+                  },
+                  {
+                      "path":  "tests/standalone/projection.cpp",
+                      "sha256":  "0B625DCD894C9353E030FFE445E9382F55E5BACE982F3A93505F4ED1A16A060F"
+                  },
+                  {
+                      "path":  "tests/standalone/prompt_layout.cpp",
+                      "sha256":  "11A1F18610DB1439BDA4601D9A5B56F5D4F77E0AF9F54D7CFD5092F989413784"
+                  },
+                  {
+                      "path":  "tests/standalone/viewport.cpp",
+                      "sha256":  "66EEFF2332CA2BC3F50CCD6BB7E40523C2DC0F1921451C47F0162C987123A29E"
+                  },
+                  {
+                      "path":  "tools/RE8Agility.Build.ps1",
+                      "sha256":  "F740401A7BC8A25C4A148956E6F3DD9115A6171D0984CF497484DF08747393A9"
+                  },
+                  {
+                      "path":  "tools/RE8Agility.Package.ps1",
+                      "sha256":  "79266EB5DC44283108AC6D5E974C343C958447B128B156B8DA79B164B7660FB9"
+                  },
+                  {
+                      "path":  "tools/RE8Agility.Setup.ps1",
+                      "sha256":  "523B44E3E25F1A6F783A5BCFD48D4EE4AED9E3C96BF42818AC3863926F0031CD"
+                  },
+                  {
+                      "path":  "tools/RE8Agility.Validate.ps1",
+                      "sha256":  "B56E2362E206B1251FC7FF5EC9E848B88F588FCDFD980D226D88BBD683F7752B"
+                  },
+                  {
+                      "path":  "tools/RE8AgilityBridge.Build.ps1",
+                      "sha256":  "EFA6664858BA7E54CD51680ABC7396CFDEC0E62D3D97D49AAD30B4BE72D064F0"
+                  },
+                  {
+                      "path":  "tools/RE8DirectStorage.Build.ps1",
+                      "sha256":  "F4E9578FCA2ADA3BF5C4D1E70BB0F0380C2F8C7BB0554213A28D21705EBA7E2B"
+                  },
+                  {
+                      "path":  "tools/RE8DirectStorage.Package.ps1",
+                      "sha256":  "5E33202C959BAC0C2441529B208B7ADF96C37F0F857A39E6F424556DC122B601"
+                  },
+                  {
+                      "path":  "tools/RE8DirectStorage.Setup.ps1",
+                      "sha256":  "D948336FD00FB86DEF501E70C75267A1949FF338421D8838B5CB6165540E5AA3"
+                  },
+                  {
+                      "path":  "tools/RE8DirectStorage.Validate.ps1",
+                      "sha256":  "32EEB1DFEEE4CDDC5F358251765B6F8D1508D17EB3E6378B5E0B21219C1052E3"
+                  },
+                  {
+                      "path":  "tools/RE8DirectStorageBridge.Build.ps1",
+                      "sha256":  "CBFDF886344C8F437CEE6E56A85AC03E7F01B186B72B1E8A01BF0C4AB8191D7B"
+                  },
+                  {
+                      "path":  "tools/RE8Display.Build.ps1",
+                      "sha256":  "9A22A0699DA0861E20557A7312A96D97ED346475AC01A898A7C8F8B3B93173A2"
+                  },
+                  {
+                      "path":  "tools/RE8Display.Common.ps1",
+                      "sha256":  "B44F754FE455471EE0F5B7D8794F80DB5045F324260D5CD3347D9784B4E5746B"
+                  },
+                  {
+                      "path":  "tools/RE8Display.Install.ps1",
+                      "sha256":  "2994AD788912F429C9D315D2E89C20EAA07352E16EBA705FA65956D6DBC7205D"
+                  },
+                  {
+                      "path":  "tools/RE8Display.MediaInspect.lua",
+                      "sha256":  "038C7402E25597B5297BCB0BCED380D9CEF47FFD8B08D9C271F7B3CA970520FA"
+                  },
+                  {
+                      "path":  "tools/RE8Display.MediaPromptInspect.lua",
+                      "sha256":  "31D53E49FA52C87AB3D2A6944938288CB3BBDC26129AE45357285A6E593616BC"
+                  },
+                  {
+                      "path":  "tools/RE8Display.Package.ps1",
+                      "sha256":  "658D31B6505C3D0BF716E4B2D8177BA4957236ADAF87476EC5D57348F3EFA226"
+                  },
+                  {
+                      "path":  "tools/RE8Display.Source.ps1",
+                      "sha256":  "38237B12C612C3A9B29474A525BE801DC61C8DC54438489D0C1760AE9793ECEB"
+                  },
+                  {
+                      "path":  "tools/RE8Display.Test.ps1",
+                      "sha256":  "B6BE4CAC1FE3F529744590021851D2F63E2F7CC146EFA16E83A6167C1766D72B"
+                  },
+                  {
+                      "path":  "tools/RE8Display.Uninstall.ps1",
+                      "sha256":  "AD9355700B966E2DC11377E64BCD6928A417A65B53435D8251643726A0F75A8F"
+                  },
+                  {
+                      "path":  "tools/RE8Release.Thumbnail.ps1",
+                      "sha256":  "CE042EF15A53B0ED68D9CBB85A11AA6C20C955570BE40DB82C194F8B1A3A4991"
+                  },
+                  {
+                      "path":  "tools/RE8Technology.Common.ps1",
+                      "sha256":  "38BE44E662D81F063566FF512B5C461620F71EA37CC1F8EDB804948C24B3B2EB"
+                  },
+                  {
+                      "path":  "tools/RE8Technology.Install.ps1",
+                      "sha256":  "CE9034CA0394D4C8FF0DCC871759BE9E54070D7957885EBB1FF0925C31C92416"
+                  },
+                  {
+                      "path":  "tools/RE8Technology.Package.ps1",
+                      "sha256":  "B01FCC04883F1F858C6D66262D373D86BA87985D55526B32155AA7094D9AA3E4"
+                  },
+                  {
+                      "path":  "tools/RE8Technology.Uninstall.ps1",
+                      "sha256":  "8E71CCFF119001615338B592BDC5A9C362C84D2CCD8C07D8FB35D1B41773BD2D"
+                  },
+                  {
+                      "path":  "tools/runtime/RE8Display.CursorInspect.lua",
+                      "sha256":  "6BEA8940CCB57DFCE77F1FB41412B69895A28D14AF19422DF0686463B03C92D0"
+                  }
+              ]
+}

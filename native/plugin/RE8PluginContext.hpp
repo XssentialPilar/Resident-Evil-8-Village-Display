@@ -23,7 +23,7 @@
 #include <reframework/API.hpp>
 
 namespace re8_plugin {
-inline constexpr char version[] = "2.7.0";
+inline constexpr char version[] = "2.7.2";
 
 struct Config {
     bool enabled{true};
@@ -34,6 +34,8 @@ struct Config {
     float fov_degrees{81.0f};
     bool vertical_fov{false};
     bool uniform_ui{true};
+    bool video_framing{true};
+    bool video_contain{false};
     bool diagnostics{false};
     int map_drag_button{0}; // Native controls; no speculative remapping.
     int menu_key{0}; // 0 = the ';' character in the current keyboard layout.
@@ -90,6 +92,8 @@ public:
         value.fov_override = boolean(L"OverrideFOV", value.fov_override);
         value.vertical_fov = boolean(L"VerticalFOV", value.vertical_fov);
         value.uniform_ui = boolean(L"UniformUI", value.uniform_ui);
+        value.video_framing = boolean(L"VideoFraming", value.video_framing);
+        value.video_contain = boolean(L"VideoContain", value.video_contain);
         value.diagnostics = boolean(L"Diagnostics", value.diagnostics);
         value.map_drag_button = GetPrivateProfileIntW(L"RE8Display", L"MapDragButton", 0, m_config_path.c_str());
         value.menu_key = GetPrivateProfileIntW(L"RE8Display", L"MenuKey", 0, m_config_path.c_str());
@@ -255,6 +259,8 @@ private:
         boolean(L"OverrideFOV", value.fov_override);
         boolean(L"VerticalFOV", value.vertical_fov);
         boolean(L"UniformUI", value.uniform_ui);
+        boolean(L"VideoFraming", value.video_framing);
+        boolean(L"VideoContain", value.video_contain);
         boolean(L"Diagnostics", value.diagnostics);
         wchar_t number[64]{};
         swprintf_s(number, L"%.6f", value.fov_degrees); write(L"FOVDegrees", number);

@@ -1,0 +1,13 @@
+{
+  "schema": 2,
+  "version": "2.7.2",
+  "configuration": "Release",
+  "builtUtc": "2026-11-11T06:44:31.1364068Z",
+  "elapsedSeconds": 5.29,
+  "sourceFingerprint": "5B278B4D91795961D6A8C93552349146D5B961C55AF6601A49B3657C5A59DE58",
+  "binary": "C:\\Users\\DiegoPorro\\Downloads\\RE8 Aspect Ratio Fix\\artifacts\\native\\Release\\RE8Display.dll",
+  "binarySha256": "71FC52837ED69C864AEEF32460A9EBF482BC6BDE33091E14D44C97053D8B26D0",
+  "status": "final-user-accepted",
+  "revision": "media-r2",
+  "acceptedDate": "2026-11-11"
+}

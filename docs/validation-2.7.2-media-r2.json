@@ -1,0 +1,23 @@
+{
+  "version": "2.7.2",
+  "revision": "media-r2",
+  "status": "final-user-accepted",
+  "acceptedDate": "2026-11-11",
+  "binarySha256": "71FC52837ED69C864AEEF32460A9EBF482BC6BDE33091E14D44C97053D8B26D0",
+  "sourceFingerprint": "5B278B4D91795961D6A8C93552349146D5B961C55AF6601A49B3657C5A59DE58",
+  "runtimeArchiveSha256": "34571B0D46744E05A9BC1209AFF4C5A8C10BE817CE57ACA00DAE30A8A8F7A714",
+  "checks": {
+    "standaloneCpp": 10,
+    "installer": 27,
+    "runtimePackage": 21,
+    "installedBinaryMatches": true
+  },
+  "runtimeEvidence": {
+    "userReport": "Tested successfully and approved as final",
+    "bindings": "Movie and transition bindings ready",
+    "previousObservedSession": "Proportional cover 1920x1080 to 1920x1200; interaction panel nativeY 0.9 to renderY 1.0; position retained",
+    "archivedLog": "Current finalization session snapshot; previous session observations were reviewed before the log was replaced"
+  },
+  "scope": "User-tested scenarios only. Not exhaustive validation of every movie, resolution, game build or host diagnostic.",
+  "optionalModules": "Unchanged; distributed separately"
+}

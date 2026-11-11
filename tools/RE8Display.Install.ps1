@@ -11,7 +11,7 @@ if (Test-Path -LiteralPath $legacyManifest) { throw 'Remove the older bundled pa
 $manifest = Get-RE8ContainedPath $GamePath '.RE8Display\install-manifest.json'
 if (Test-Path -LiteralPath $manifest) { throw 'An installation or recovery transaction exists. Uninstall RE8Display first.' }
 $payload = Get-Content -LiteralPath (Join-Path $PackageRoot 'runtime-files.json') -Raw | ConvertFrom-Json
-if ($payload.schema -ne 2 -or $payload.version -notin @('2.5.0','2.7.0') -or $payload.format -ne 'reframework-plugin') { throw 'Unsupported plugin package manifest.' }
+if ($payload.schema -ne 2 -or $payload.version -notin @('2.5.0','2.7.0','2.7.2') -or $payload.format -ne 'reframework-plugin') { throw 'Unsupported plugin package manifest.' }
 $allowed = @('reframework\plugins\RE8Display.dll', 'reframework\data\RE8Display.ini')
 $files = @($payload.files)
 if ($files.Count -ne $allowed.Count) { throw 'Unexpected plugin payload size.' }

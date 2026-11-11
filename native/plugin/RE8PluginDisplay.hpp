@@ -9,6 +9,8 @@
 #include <vector>
 #include "RE8PluginContext.hpp"
 #include "RE8PluginCursor.hpp"
+#include "RE8PluginMedia.hpp"
+#include "RE8PluginPrompt.hpp"
 #include "../common/RE8CameraProjection.hpp"
 #include "../common/RE8GuiLayout.hpp"
 #include "../common/RE8ManagedNumeric.hpp"
@@ -48,6 +50,8 @@ public:
         }
         if (name == "UnlockScene" || name == "UpdateBehavior") restore_cameras();
         if (name == "UpdateBehavior") {
+            m_prompts.tick();
+            m_media.tick();
             ++m_epoch;
             const auto config = Context::get().config();
             cleanup_gui(!config.enabled || !config.display_enabled || !config.uniform_ui);
@@ -77,18 +81,32 @@ public:
         // The original cursor has its own pixel-coordinate canvas. Applying
         // general HUD resolution adjustment to it would scale its position twice.
         if (Cursor::get().owns_cursor_view(view)) { restore_gui(view); return true; }
+        const bool transition = is_black_fade(element);
+        if (m_media.classify(component_object(element), view, transition)) {
+            if (transition || (config.enabled && config.video_framing)) {
+                restore_gui(view);
+                m_media.apply(view, config.video_contain);
+                return true;
+            }
+            m_media.restore(view);
+            return true; // A disabled movie correction must not inherit HUD fitting.
+        }
         if (!config.enabled || !config.display_enabled || !config.uniform_ui) {
+            m_prompts.restore_all();
             restore_gui(view);
             return true;
         }
         // Solid full-screen fades deliberately cover the entire output.
-        if (is_black_fade(element)) return true;
+        if (transition) return true;
         apply_gui(view);
+        m_prompts.apply(component_object(element),view);
         return true; // Never suppress layout, interaction, or the original draw.
     }
 
 private:
     std::recursive_mutex m_mutex;
+    MediaLayers m_media;
+    PromptLayers m_prompts;
     bool m_ready{};
     std::atomic<bool> m_reset_pending{};
     uint64_t m_epoch{};
@@ -108,21 +126,15 @@ private:
         *m_component_object{}, *m_object_component{}, *m_name_get{}, *m_string_equals{};
     Object* m_gui_runtime_type{};
     Object* m_black_fade_name{};
+    Object* m_transition_name{};
+    Object* m_back_color_name{};
     API::TypeDefinition* m_game_object_type{};
     API::TypeDefinition* m_component_type{};
     int32_t m_fit{}, m_perspective{}, m_screen{}, m_fit_small{}, m_center{}, m_always{};
 
     static std::optional<reframework::InvokeRet> invoke(Method* method, Object* object,
-                                                        std::vector<void*> args = {}) {
-        if (method == nullptr || method->get_function_raw() == nullptr) return std::nullopt;
-        // API.hpp's convenience wrapper discards non-exception error codes.
-        // Check the public result explicitly so failed getters never become 0.
-        reframework::InvokeRet result{};
-        const auto status = Context::get().api().sdk()->method->invoke(*method, object,
-            args.empty() ? nullptr : args.data(), static_cast<unsigned int>(args.size() * sizeof(void*)),
-            &result, sizeof(result));
-        if (status != REFRAMEWORK_ERROR_NONE || result.exception_thrown) return std::nullopt;
-        return result;
+                                                        std::initializer_list<void*> args = {}) {
+        return invoke_small(method,object,args);
     }
     static void* integer_argument(int32_t value) {
         return reinterpret_cast<void*>(static_cast<uintptr_t>(static_cast<uint32_t>(value)));
@@ -200,6 +212,10 @@ private:
         if (m_gui_runtime_type != nullptr) m_gui_runtime_type->add_ref();
         m_black_fade_name = api.create_managed_string_normal("BlackFade");
         if (m_black_fade_name != nullptr) m_black_fade_name->add_ref();
+        m_transition_name = api.create_managed_string_normal("FadeInOutBlack");
+        if (m_transition_name != nullptr) m_transition_name->add_ref();
+        m_back_color_name = api.create_managed_string_normal("BackColor");
+        if (m_back_color_name != nullptr) m_back_color_name->add_ref();
         m_ready = true;
         api.log_info("[RE8Display] Engine-cycle projection; native render sizes retained; RE8 content-aspect calibration and root-only uniform GUI");
         return true;
@@ -314,8 +330,12 @@ private:
         auto object = component_object(element);
         const auto name = object != nullptr ? invoke(m_name_get, object) : std::nullopt;
         if (!name || name->ptr == nullptr) return false;
-        const auto equal = invoke(m_string_equals, static_cast<Object*>(name->ptr), {m_black_fade_name});
-        return equal && equal->byte != 0;
+        for (auto known : {m_black_fade_name, m_transition_name, m_back_color_name}) {
+            if (!known) continue;
+            const auto equal = invoke(m_string_equals, static_cast<Object*>(name->ptr), {known});
+            if (equal && equal->byte != 0) return true;
+        }
+        return false;
     }
     Object* root_view(Object* element) const {
         if (element->get_type_definition() == nullptr) return nullptr;

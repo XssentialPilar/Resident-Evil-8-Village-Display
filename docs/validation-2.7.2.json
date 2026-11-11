@@ -1,0 +1,23 @@
+{
+  "version": "2.7.2",
+  "status": "user-accepted-final",
+  "acceptedUtc": "2026-11-10T22:05:58.6028008Z",
+  "userDecision": "Works well; finalize exact tested build; remaining corrections deferred by user",
+  "binarySha256": "16E9B902E5475044B917A07D3B43C1039BF1E9087F6B3134BBAEFD1D806652A4",
+  "sourceFingerprint": "0C312B530CED7753A67EB63AE6B8595EEB5EB37037DCD7B4EFC0235B2C2DAB7E",
+  "nativeTests": 8,
+  "installerChecks": 27,
+  "packageChecks": 21,
+  "observed": {
+    "plugin272": true,
+    "transitionBindingsReady": true,
+    "movieBindingsReady": false,
+    "cursorAbsoluteSync": true
+  },
+  "limitations": [
+    "Movie bindings unavailable in tested session; no runtime claim of prerecorded video framing.",
+    "Present failed: 87a0001 observed in this session and previous 2.7.0 baseline; cause unresolved.",
+    "No universal display/resolution compatibility claim."
+  ],
+  "evidenceLogSha256": "228A0DDE2DDEB473F565A3257BDB6B171FC398D63AF8EF3B9BBAE1EA48A58429"
+}

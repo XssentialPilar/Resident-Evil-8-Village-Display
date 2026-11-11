@@ -16,6 +16,8 @@ Launch RE8 normally and inspect `[RE8DirectStorage]` in `re2_framework_log.txt`.
 
 The final package is created only after validation of the exact installed DLL in the real game and a completed gameplay test. Native harness checks cover completion status, count, LastError, file cursor, offsets above 4 GiB, EOF, duplicate/recycled handles, concurrency, errors, native fallback and injected data mismatch. These checks do not prove every hardware/mod combination or every future game build.
 
+The recorded RE8 gameplay test completed 18,011 PAK reads / 4,543,855,912 bytes. The first 64 reads matched independent native reads completely, with zero comparison, runtime, timeout or file-state errors; the user reported no loading errors or hangs. Tested DLL SHA256: `1D8A53EC6C9434AE08FD1E12E5CC55EE327F844D4B29BE42BDAA6607863C8094`. The packaged DLL is that exact binary, without recompilation. This test covers CPU file reads, not GPU decompression or a measured performance improvement.
+
 To remove with the game closed:
 
 ```powershell
